@@ -22,7 +22,7 @@ mvn archetype:generate -B \
     -DartifactId=bookmarkservice \
     -DarchetypeGroupId=org.actframework \
     -DarchetypeArtifactId=archetype-simple-restful-service \
-    -DarchetypeVersion=1.8.8.8
+    -DarchetypeVersion=1.8.8.10
 ```
 
 After project generated, run `mvn compile` to download dependencies
