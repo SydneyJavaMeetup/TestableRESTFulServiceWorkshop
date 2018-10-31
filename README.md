@@ -25,7 +25,16 @@ mvn archetype:generate -B \
     -DarchetypeVersion=1.8.8.10
 ```
 
-After project generated, run `mvn compile` to download dependencies
+After project generated, add the following dependency to the project:
+
+```xml
+    <dependency>
+      <groupId>org.actframework</groupId>
+      <artifactId>act-eclipselink</artifactId>
+    </dependency>
+```
+
+Now run `mvn compile` to download dependencies - this is gonna take some time.
 
 ## Discussion
 
