@@ -14,7 +14,7 @@ Notes and examples for the Sydney Java Meetup's Testable RESTful service worksho
 
 **If you haven't setup your Prerequesites, now it is good time to do that**
 
-Create a project with maven archetype (this is gonna take some time, so let's do it before introducing ActFramework)
+Create a project with maven archetype, run
 
 ```
 mvn archetype:generate -B \
@@ -34,7 +34,7 @@ After project generated, add the following dependency to the project:
     </dependency>
 ```
 
-Now run `mvn compile` to download dependencies - this is gonna take some time.
+Now run `mvn compile` to download dependencies - this is gonna take some time, so let's take the time and have chat about web framework.
 
 ## Discussion
 
