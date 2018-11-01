@@ -1,0 +1,8 @@
+Scenario(login):
+  interactions:
+    - description: login user
+      request:
+        post: /login
+        params:
+          username: foo
+          password: bar

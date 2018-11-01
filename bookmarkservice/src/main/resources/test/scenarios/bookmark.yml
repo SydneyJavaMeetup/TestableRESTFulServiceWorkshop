@@ -1,0 +1,44 @@
+Scenario(bookmark):
+  depends:
+    - login
+  urlContext: /bookmarks
+  interactions:
+    - description: create a bookmark
+      request:
+        post: .
+        params:
+          url: http://github.com
+          description: A microsoft problem
+      response:
+        status: 201
+        json:
+          id:
+            - exists: true
+      cache:
+        newBookmarkId: id
+    - description: verify the bookmark created
+      request:
+        get: ${newBookmarkId}
+      response:
+        json:
+          url: http://github.com
+          description:
+            - contains: microsoft
+    - description: update a bookmark that does not exist
+      request:
+        put: -123
+      response:
+        status: 404
+    - description: update an existing bookmark
+      request:
+        put: ${newBookmarkId}
+        json:
+          data:
+            description: A great code repo
+    - description: verify bookmark update
+      request:
+        get: ${newBookmarkId}
+      response:
+        json:
+          url: http://github.com
+          description: A great code repo
